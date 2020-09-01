@@ -1,0 +1,48 @@
+$smartphone-width: 600px;
+$primaryColor: #f4f4fd;
+$secondaryColor: #1b1b1b;
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone-width}) {
+    @content;
+  }
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  background: transparent;
+
+  .fancy {
+    background: transparent;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 6;
+    padding: 2em 0;
+    transition: all 1s;
+    box-shadow: 0px 3px 6px #00000027;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .option {
+      color: $primaryColor;
+      margin: 0 1em;
+      padding: 1em;
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+  .white-bg {
+    background-color: white;
+    .option {
+      color: $secondaryColor !important;
+    }
+  }
+}

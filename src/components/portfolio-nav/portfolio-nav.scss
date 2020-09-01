@@ -1,0 +1,51 @@
+$tablet: 850px;
+$smartphone: 500px;
+$primaryColor: #f4f4fd;
+$secondaryColor: #1b1b1b;
+
+// Mixin
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+.portfolio-nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  .link {
+    padding: 10px;
+    text-transform: uppercase;
+    margin: 10px;
+    font-size: 1.8em;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    color: $secondaryColor;
+    letter-spacing: 2px;
+    cursor: pointer;
+    &:first-child {
+      cursor: pointer;
+    }
+
+    @include smartphone() {
+      margin: 5px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  }
+  .active {
+    background: linear-gradient(#006eff, #00a8ff, #0e63d1);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

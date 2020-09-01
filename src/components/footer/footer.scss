@@ -1,0 +1,39 @@
+$smartphone-width: 600px;
+$primaryColor: #f4f4fd;
+$secondaryColor: #1b1b1b;
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone-width}) {
+    @content;
+  }
+}
+
+.footer {
+  padding: 20px 0 30px 0;
+  text-align: center;
+  color: $secondaryColor;
+
+  @include smartphone() {
+    .footer {
+      img {
+        width: 70px;
+      }
+    }
+  }
+
+  h4 {
+    display: inline-block;
+  }
+
+  img {
+    width: 60px;
+  }
+  p {
+    color: $secondaryColor;
+    display: inline-block;
+
+    a {
+      color: #006eff;
+    }
+  }
+}

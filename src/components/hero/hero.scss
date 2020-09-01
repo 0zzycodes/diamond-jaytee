@@ -1,0 +1,117 @@
+$smartphone-width: 600px;
+$smallScreen: 800px;
+$primaryColor: #f4f4fd;
+$secondaryColor: #1b1b1b;
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone-width}) {
+    @content;
+  }
+}
+
+.hero {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+
+  .posis {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .mouse {
+      height: 45px;
+      width: 30px;
+      background-color: $primaryColor;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      margin-top: auto;
+      position: absolute;
+      bottom: 2em;
+      cursor: pointer;
+
+      .ball {
+        transition: all 0.4s ease-in-out;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background-color: $secondaryColor;
+        display: block;
+        // animation: slide_down 2s linear forwards;
+        animation-delay: 2s;
+        animation-timing-function: ease-in-out;
+      }
+      &:hover {
+        .ball {
+          transform: translateY(1em);
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .intro {
+      color: $primaryColor;
+      font-size: 2em;
+      font-weight: 100;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "Hi there, I'm";
+        font-weight: 600;
+        white-space: nowrap;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: $primaryColor;
+      }
+
+      .name {
+        background: linear-gradient(#006eff, #00a8ff, #0e63d1);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Pacifico";
+        font-size: 4em !important;
+        line-height: 2em;
+        display: block;
+      }
+    }
+
+    p {
+      margin-bottom: 25px;
+      color: lighten($color: $primaryColor, $amount: 10);
+      font-weight: 600;
+    }
+
+    @include smartphone() {
+      p {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $smallScreen) {
+  .hero {
+    .content {
+      .intro {
+        color: $secondaryColor;
+        font-size: 30px;
+        font-weight: 100;
+      }
+    }
+  }
+}
