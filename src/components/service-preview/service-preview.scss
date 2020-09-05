@@ -4,12 +4,23 @@ $secondaryColor: #1b1b1b;
 .service-preview {
   flex: 0 0 33.33333%;
   max-width: 33.33333%;
-  height: 30em;
+  // height: 30em;
   padding: 1em;
   .pro {
     border-radius: 0.8em;
     height: 100%;
     width: 100%;
+    padding: 2em;
     box-shadow: 0px 3px 6px #00000027;
+    h3 {
+      font-size: 2em;
+      font-weight: 500;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-weight: 300;
+      color: $secondaryColor;
+      letter-spacing: 0.1em;
+    }
   }
 }

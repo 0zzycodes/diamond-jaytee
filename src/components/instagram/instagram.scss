@@ -51,3 +51,25 @@ $secondaryColor: #ffffff;
     color: darken($color: $secondaryColor, $amount: 40);
   }
 }
+
+.progress-bar {
+  position: relative;
+  width: 400px;
+  height: 10px;
+  background-color: rgb(188, 202, 202);
+  border-radius: 10px;
+  .bar {
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: teal;
+    animation: load 1s linear forwards;
+  }
+}
+@keyframes load {
+  to {
+    width: 100%;
+  }
+}

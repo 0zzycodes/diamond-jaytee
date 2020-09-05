@@ -31,9 +31,11 @@ $secondaryColor: #1b1b1b;
   p {
     color: $secondaryColor;
     display: inline-block;
-
+    font-size: 1.6em;
+    font-weight: 600;
     a {
       color: #006eff;
+      font-weight: 500;
     }
   }
 }

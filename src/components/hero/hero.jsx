@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="posis">
         <div className="content">
           <h3 className="intro">
-            <span className="name">JayTee </span>
+            <span className="name">Diamond_Jaytee </span>
           </h3>
           <p>WELCOME TO MY WORLD </p>
         </div>

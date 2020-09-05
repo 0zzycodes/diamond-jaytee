@@ -1,4 +1,4 @@
-$smartphone-width: 600px;
+$smartphone-width: 850px;
 $primaryColor: #f4f4fd;
 $secondaryColor: #1b1b1b;
 
@@ -17,7 +17,8 @@ $secondaryColor: #1b1b1b;
     background: transparent;
   }
 
-  .navbar {
+  .navbar,
+  .mobo-navbar {
     position: fixed;
     top: 0;
     right: 0;
@@ -26,6 +27,9 @@ $secondaryColor: #1b1b1b;
     padding: 2em 0;
     transition: all 1s;
     box-shadow: 0px 3px 6px #00000027;
+    @include smartphone() {
+      display: none;
+    }
     .nav-links {
       display: flex;
       align-items: center;
@@ -37,6 +41,46 @@ $secondaryColor: #1b1b1b;
       padding: 1em;
       cursor: pointer;
       font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-weight: 600;
+        // font-size: 1.2em;
+        color: white;
+      }
+      img {
+        height: 1.5em;
+        width: 1.5em;
+        margin-bottom: 0.5em;
+        margin-right: 0.4em;
+      }
+    }
+    .shop-btn {
+      padding: 0.5em 1em;
+      border-radius: 0.2em;
+      max-width: 6.5em;
+      background-image: linear-gradient(#006eff, #00a8ff, #0e63d1);
+    }
+  }
+  .mobo-navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+    background-color: inherit;
+    box-shadow: none;
+    @include smartphone() {
+      display: flex;
+    }
+    .menu {
+      margin: 0 1em;
+      padding: 0.5em;
+      border-radius: 0.2em;
+      max-width: 4em;
+      background-image: linear-gradient(#006eff, #00a8ff, #0e63d1);
+      cursor: pointer;
     }
   }
   .white-bg {
@@ -44,5 +88,11 @@ $secondaryColor: #1b1b1b;
     .option {
       color: $secondaryColor !important;
     }
+  }
+}
+.shop-route {
+  height: 15vh;
+  .navbar {
+    background: black;
   }
 }

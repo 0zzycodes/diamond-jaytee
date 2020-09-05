@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <p className="copyright">
-        &copy; JayTee {new Date().getFullYear()} |{" "}
+        &copy; Diamond_Jaytee {new Date().getFullYear()} |{" "}
         <a href="https://ozzy-dev.netlify.com">Ozzy.dev</a>
       </p>
     </footer>

@@ -1,0 +1,32 @@
+.contact-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 20em;
+  width: 100%;
+  background-color: #707070;
+  .divider {
+    height: 100%;
+    bottom: 0;
+    width: 0.2em;
+    background-color: white;
+    margin: 0 2em;
+  }
+  p {
+    font-size: 2em;
+    font-weight: 900;
+    color: white;
+    span {
+      font-weight: 500;
+    }
+  }
+  .phone {
+    width: 20em;
+    margin-right: 2em;
+  }
+  .email {
+    width: 20em;
+    margin-left: 2em;
+  }
+}

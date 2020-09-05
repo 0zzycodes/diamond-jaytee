@@ -1,0 +1,72 @@
+$smartphone: 850px;
+$primaryColor: #f4f4fd;
+$secondaryColor: #1b1b1b;
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+
+.buger-menu {
+  position: fixed;
+  top: 2em;
+  left: 1em;
+  width: 0vw;
+  height: 0vh;
+  overflow: hidden;
+  background: linear-gradient(#006eff, #00a8ff, #0e63d1);
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  display: flex;
+  display: none;
+  @include smartphone() {
+    display: flex;
+  }
+  .buger-menu-links {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .buger-menu-option {
+      padding: 0.5em 1em;
+      margin: 0.5em 0;
+      color: $primaryColor;
+      margin: 0 1em;
+      padding: 1em;
+      cursor: pointer;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-weight: 600;
+        // font-size: 1.2em;
+        color: white;
+      }
+      img {
+        height: 1.5em;
+        width: 1.5em;
+        margin-bottom: 0.5em;
+        margin-right: 0.4em;
+      }
+    }
+  }
+}
+.show {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+}
+.hide {
+  width: 0vw;
+  height: 0vh;
+  top: 2em;
+  left: 1em;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+}

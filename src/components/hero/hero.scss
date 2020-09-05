@@ -70,9 +70,12 @@ $secondaryColor: #1b1b1b;
       position: relative;
       &::before {
         position: absolute;
-        content: "Hi there, I'm";
+        content: "HI THERE, I'M";
         font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 1em;
         white-space: nowrap;
+        text-align: center;
         top: 0;
         left: 0;
         right: 0;
@@ -91,26 +94,15 @@ $secondaryColor: #1b1b1b;
     }
 
     p {
-      margin-bottom: 25px;
+      margin-top: -1em;
       color: lighten($color: $primaryColor, $amount: 10);
+      font-size: 1.8em;
       font-weight: 600;
     }
 
     @include smartphone() {
       p {
         font-size: 17px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: $smallScreen) {
-  .hero {
-    .content {
-      .intro {
-        color: $secondaryColor;
-        font-size: 30px;
-        font-weight: 100;
       }
     }
   }
