@@ -90,6 +90,9 @@ $secondaryColor: #1b1b1b;
         font-size: 4em !important;
         line-height: 2em;
         display: block;
+        @include smartphone() {
+          font-size: 2.5em !important;
+        }
       }
     }
 

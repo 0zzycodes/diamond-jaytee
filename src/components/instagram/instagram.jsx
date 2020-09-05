@@ -27,9 +27,6 @@ export default class InstagramPosts extends Component {
     ) : (
       <div className="no-post">
         <span>No Post From IG Yet</span>
-        <div className="progress-bar">
-          <div className="bar"></div>
-        </div>
       </div>
     );
   }
