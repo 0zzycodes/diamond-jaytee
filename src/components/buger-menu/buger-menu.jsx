@@ -7,7 +7,7 @@ const BugerMenu = ({ isShow, toggleMenu }) => {
     toggleMenu(!isShow);
   };
   const body = document.querySelector("body");
-  isShow
+  window.innerWidth <= 850 && isShow
     ? (body.style.overflowY = "hidden")
     : (body.style.overflowY = "scroll");
   return (
