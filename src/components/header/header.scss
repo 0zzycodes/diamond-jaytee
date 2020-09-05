@@ -82,6 +82,21 @@ $secondaryColor: #1b1b1b;
       background-image: linear-gradient(#006eff, #00a8ff, #0e63d1);
       cursor: pointer;
     }
+    .shop-btn {
+      padding: 0.5em 1em;
+      border-radius: 0.2em;
+      max-width: 6.5em;
+      background-image: linear-gradient(#006eff, #00a8ff, #0e63d1);
+      @include smartphone() {
+        padding: 0.5em;
+        img {
+          margin: 0;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
   }
   .white-bg {
     background-color: white;
