@@ -1,9 +1,11 @@
 .portfolio {
+  min-height: 30em;
   .project-list {
     width: 80vw;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: flex-start;
   }
 }
