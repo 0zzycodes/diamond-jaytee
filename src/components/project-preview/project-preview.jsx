@@ -1,15 +1,13 @@
 import React from "react";
 import "./project-preview.scss";
-const ProjectPreview = ({
-  data: { id, name, tumblnail, imageUrl, category, shortDescription },
-}) => {
+const ProjectPreview = ({ data: { name, tumbnail, short_description } }) => {
   return (
     <div className="project-preview">
       <div className="pro">
-        <img src={"" || tumblnail} alt={"" || shortDescription} />
+        <img src={"" || tumbnail} alt={"" || short_description} />
         <div className="footer-text">
           <h4>{"" || name}</h4>
-          <p>{"" || shortDescription}</p>
+          <p>{"" || short_description}</p>
         </div>
       </div>
     </div>

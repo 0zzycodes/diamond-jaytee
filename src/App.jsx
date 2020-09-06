@@ -9,10 +9,9 @@ import Services from "./sections/services/services";
 import InstagramPosts from "./components/instagram/instagram";
 import Contact from "./sections/contact/contact";
 import Feedback from "./sections/feedback/feedback";
-
-import "./App.scss";
 import Shop from "./pages/shop/shop";
 import { setProjects } from "./redux/project/actions";
+import "./App.scss";
 
 const App = ({ match, setProjects }) => {
   window.addEventListener("scroll", () => {
@@ -35,9 +34,7 @@ const App = ({ match, setProjects }) => {
     prevScrollpos = currentScrollpos;
   };
   useEffect(() => {
-    const projectRef = firestore
-      .collection("projects")
-      .orderBy("arrange", "desc");
+    const projectRef = firestore.collection("projects");
     projectRef.onSnapshot(async (snapshot) => {
       const projects = [];
       snapshot.docs.forEach((doc) => {
