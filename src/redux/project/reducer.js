@@ -9,7 +9,7 @@ const projectReducer = (state = INITIAL_STATE, action) => {
     case ProjectActionTypes.SET_PROJECTS:
       return {
         ...state,
-        currentUser: action.payload,
+        projects: action.payload,
       };
 
     default:

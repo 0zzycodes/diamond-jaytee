@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import { Route, Switch, withRouter } from "react-router-dom";
+import { firestore } from "./firebase/firebase.utils";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import Portfolio from "./sections/portfolio/portfolio";
@@ -10,8 +12,9 @@ import Feedback from "./sections/feedback/feedback";
 
 import "./App.scss";
 import Shop from "./pages/shop/shop";
+import { setProjects } from "./redux/project/actions";
 
-const App = ({ match }) => {
+const App = ({ match, setProjects }) => {
   window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
       document.querySelector(".navbar").classList.remove("fancy");
@@ -31,6 +34,18 @@ const App = ({ match }) => {
     }
     prevScrollpos = currentScrollpos;
   };
+  useEffect(() => {
+    const projectRef = firestore
+      .collection("projects")
+      .orderBy("arrange", "desc");
+    projectRef.onSnapshot(async (snapshot) => {
+      const projects = [];
+      snapshot.docs.forEach((doc) => {
+        projects.push(doc.data());
+      });
+      setProjects(projects);
+    });
+  });
   return (
     <div className="app" id="/">
       <Header />
@@ -67,5 +82,7 @@ const App = ({ match }) => {
     </div>
   );
 };
-
-export default withRouter(App);
+const mapDispatchToProps = (dispatch) => ({
+  setProjects: (project) => dispatch(setProjects(project)),
+});
+export default withRouter(connect(null, mapDispatchToProps)(App));

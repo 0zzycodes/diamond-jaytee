@@ -1,30 +1,48 @@
 import React from "react";
 import "./portfolio-nav.scss";
-export const PortfolioNav = () => {
-  const handleFilter = (e) => {
-    console.log(e);
-  };
+export const PortfolioNav = ({ data: { filter, handleFilter } }) => {
   return (
     <div className="portfolio-nav">
-      <span className="link active" onClick={handleFilter.bind(this, "ALL")}>
+      <span
+        className={`${filter === "ALL" && "active"} link`}
+        onClick={handleFilter.bind(this, "ALL")}
+      >
         All
       </span>
-      <span className="link" onClick={handleFilter.bind(this, "ARCHITECTURE")}>
+      <span
+        className={`${filter === "ARCHITECTURE" && "active"} link`}
+        onClick={handleFilter.bind(this, "ARCHITECTURE")}
+      >
         ARCHITECTURE
       </span>
-      <span className="link" onClick={handleFilter.bind(this, "ARTS")}>
+      <span
+        className={`${filter === "ARTS" && "active"} link`}
+        onClick={handleFilter.bind(this, "ARTS")}
+      >
         ARTS
       </span>
-      <span className="link" onClick={handleFilter.bind(this, "BRUSHES")}>
+      <span
+        className={`${filter === "BRUSHES" && "active"} link`}
+        onClick={handleFilter.bind(this, "BRUSHES")}
+      >
         BRUSHES
       </span>
-      <span className="link" onClick={handleFilter.bind(this, "CRAFTS")}>
+      <span
+        className={`${filter === "CRAFTS" && "active"} link`}
+        onClick={handleFilter.bind(this, "CRAFTS")}
+      >
         CRAFTS
       </span>
-      <span className="link" onClick={handleFilter.bind(this, "ILUSTRATIONS")}>
+      <span
+        className={`${filter === "ILUSTRATIONS" && "active"} link`}
+        onClick={handleFilter.bind(this, "ILUSTRATIONS")}
+      >
         ILUSTRATIONS
       </span>
-      <span className="link" onClick={handleFilter.bind(this, "WALLPAPERS")}>
+      <span
+        className={`${filter === "WALLPAPERS" && "active"} link`}
+        onClick={handleFilter.bind(this, "WALLPAPERS")}
+      >
         WALLPAPERS
       </span>
     </div>

@@ -4,17 +4,22 @@ import { Link as DomLink, withRouter } from "react-router-dom";
 import Hero from "../hero/hero";
 import bag from "../../assets/bag.svg";
 import menu from "../../assets/menu.svg";
-import "./header.scss";
 import BugerMenu from "../buger-menu/buger-menu";
+import "./header.scss";
 
 const Header = ({ match, history }) => {
   const [isShow, setisShow] = useState(false);
+  const goHome = () => {
+    history.location.pathname === "/shop" && history.push("/");
+  };
   const handleScroll = (e) => {
     setisShow(!isShow);
+    goHome();
   };
   const toggleMenu = () => {
     setisShow(!isShow);
   };
+
   return (
     <header className={`${!match.isExact && "shop-route"} header`}>
       <div className="b-menu">
@@ -24,11 +29,11 @@ const Header = ({ match, history }) => {
         <div className="links">
           <div className="nav-links">
             <Link
+              onClick={handleScroll.bind(this, "/")}
               to="/"
               spy={true}
               smooth={true}
               duration={500}
-              onClick={handleScroll.bind(this, "/")}
               className="option"
             >
               HOME
@@ -63,7 +68,6 @@ const Header = ({ match, history }) => {
             >
               TESTIMONIALS
             </Link>
-
             <Link
               to="contact"
               spy={true}
@@ -86,7 +90,11 @@ const Header = ({ match, history }) => {
         <div className="menu" onClick={toggleMenu}>
           <img src={menu} alt="menu" />
         </div>
-        <DomLink to="/shop" className="option shop-btn">
+        <DomLink
+          to="/shop"
+          className="option shop-btn"
+          onClick={() => setisShow(false)}
+        >
           <img src={bag} alt="shopping bag" />
           <span>SHOP</span>
         </DomLink>
